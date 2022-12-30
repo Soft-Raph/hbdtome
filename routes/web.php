@@ -26,6 +26,7 @@ Route::get('/visitor', function () {
 Route::post('submit', [VisitorController::class, 'submit'])->name('submit');
 Route::post('card/bonus', [VisitorController::class, 'cardBonus'])->name('cardBonus');
 Route::get('/dashboard', [VisitorController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/destory/{id}',[VisitorController::class, 'destroy'])->name('destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

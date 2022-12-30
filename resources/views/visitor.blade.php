@@ -42,41 +42,38 @@
                 </h1>
 
                 <p class="max-w-3xl mx-auto mt-6 text-lg text-center text-gray-700 dark:text-white md:text-xl">
-                   Thank you for wishing me.
+                    Thank you for making me smile on my birthday!
                 </p>
-
+                @if ($errors->any())
+                    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                        @foreach ($errors->all() as $error)
+                            <li class="font-bold">{{ $error }}</li>
+                        @endforeach
+                    </div>
+                @endif
                 <div class="flex flex-col mt-8 space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
                     <form action="{{route('cardBonus')}}" method="POST">
                         @csrf
-                        <select id="countries" name="network" class="px-6 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring sm:mx-2">
-                            <option selected>Choose a Network</option>
-                            <option value="mtn">mtn</option>
-                            <option value="glo">glo</option>
-                            <option value="airtel">airtel</option>
-                            <option value="9mobile">9mobile</option>
-                        </select>
-
-                        <input  type="text" name="number" class="px-6 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring sm:mx-2" placeholder="Phone Number" />
-
-                        <button class="px-8 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">
+                        <input  type="text" name="number" class="mt-4 px-6 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring sm:mx-2" placeholder="number eg. 23490399..." />
+                        <button class="mt-4 px-8 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">
                             Claim
                         </button>
                     </form>
                 </div>
 
-                <p class="mt-8 text-center text-gray-700 dark:text-white text-md md:text-xl">Notify me when App is launched :)</p>
+                <p class="mt-8 text-center text-gray-700 dark:text-white text-md md:text-xl">Send gift <span>🎁</span>, fund <span>💰</span> ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
             </div>
         </section>
 
         <footer class="flex flex-col items-center mt-12 sm:flex-row sm:justify-between">
-            <a href="#" class="text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"> Privacy Policy </a>
+            <a href="#" class="text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Ariyo Ayomide Raphael ️️❤️❤️❤️</a>
 
             <div class="mt-4 -mx-4 md:mt-0">
-                <a href="#" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"> Facebook</a>
+                <a href="https://twitter.com/AriyoRaphael1/" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"> Twitter</a>
 
-                <a href="#" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Instagram</a>
+                <a href="https://wa.me/qr/2BLKT5CUOSNWP1" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Whatsapp</a>
 
-                <a href="#" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/ayomide-ariyo-023822168/" class="px-4 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"> LinkedIn</a>
             </div>
         </footer>
     </div>
