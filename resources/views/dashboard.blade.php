@@ -10,7 +10,7 @@
         </div>
     </x-slot>
     <!-- component -->
-    <h3 class="text-2xl text-gray-700 font-bold mb-6 ml-3 flex justify-center">My Wishes</h3>
+    <h3 class="text-2xl text-gray-700 font-bold mb-6 ml-3 flex justify-center">My {{$plural}}</h3>
     <div class="px-6 py-6">
         <ol  class="flex flex-wrap">
             @foreach($wishes as $wish)
@@ -30,6 +30,12 @@
                         <div class="flex justify-between mb-4">
                         <a href="#!" class="font-medium text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out text-sm">{{$wish->number}}</a>
                             <a href="#!" class="font-medium text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out text-sm">Got Card: {{$wish->fund}}</a>
+                            <form action="{{ route('destroy', $wish->id) }}" method="POST">
+                                @csrf
+                                <td class="py-4 px-6 text-right">
+                                    <button type="submit" class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete</button>
+                                </td>
+                            </form>
                         </div>
                     </div>
                 </div>

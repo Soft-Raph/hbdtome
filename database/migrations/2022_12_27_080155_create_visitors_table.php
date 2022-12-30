@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('number');
-            $table->string('message');
+            $table->text('message');
             $table->string('ip_address');
             $table->string('fund')->default('no');
             $table->timestamps();
