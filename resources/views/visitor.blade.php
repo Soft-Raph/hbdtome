@@ -61,7 +61,7 @@
                     </form>
                 </div>
 
-                <p class="mt-8 text-center text-gray-700 dark:text-white text-md md:text-xl">Send gift <span>🎁</span>, fund <span>💰</span> ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+                <p class="mt-8 text-center text-gray-700 dark:text-white text-md md:text-xl">Send gift <span>🎁</span>, fund <span>💰</span> ❤️❤️❤️❤️❤️❤️</p>
             </div>
         </section>
 
