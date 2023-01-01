@@ -10,7 +10,7 @@
         </div>
     </x-slot>
     <!-- component -->
-    <h3 class="text-2xl text-gray-700 font-bold mb-6 ml-3 flex justify-center">My {{$plural}}</h3>
+    <h3 class="text-2xl text-gray-700 font-bold mb-6 ml-3 flex justify-center">{{$word}} {{$plural}}</h3>
     <div class="px-6 py-6">
         <ol  class="flex flex-wrap">
             @foreach($wishes as $wish)
