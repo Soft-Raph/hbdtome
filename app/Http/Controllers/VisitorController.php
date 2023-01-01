@@ -43,7 +43,7 @@ class VisitorController extends Controller
             'Authorization' => 'Bearer 211|CrkBdJxubacIpFKePn2geZlyotxKgUiP0zTKY0NB',
         ])->get('https://www.airtimenigeria.com/api/v1/balance/get')->json();
        $balance =$response['universal_wallet']['balance'];
-        return view('dashboard',compact('wishes', 'balance','plural'));
+        return view('dashboard',compact('wishes', 'balance','plural','word'));
     }
 
     public function cardBonus(Request $request)
