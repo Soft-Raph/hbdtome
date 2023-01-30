@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreVisitorRequest;
 use App\Models\Recharge;
 use App\Models\Visitor;
+use Illuminate\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,6 +16,14 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class VisitorController extends Controller
 {
+    /**
+     * @var Repository|Application|mixed
+     */
+    protected $token;
+    public function __construct()
+    {
+        $this->token =config('app.token');
+    }
     public function submit(StoreVisitorRequest $request)
     {
         $ip = Visitor::query()->where('ip_address',request()->ip())->first();
@@ -40,7 +49,7 @@ class VisitorController extends Controller
         $response =Http::withHeaders([
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer 211|CrkBdJxubacIpFKePn2geZlyotxKgUiP0zTKY0NB',
+            'Authorization' => 'Bearer ',
         ])->get('https://www.airtimenigeria.com/api/v1/balance/get')->json();
        $balance =$response['universal_wallet']['balance'];
         return view('dashboard',compact('wishes', 'balance','plural','word'));
@@ -49,6 +58,7 @@ class VisitorController extends Controller
     public function cardBonus(Request $request)
     {
         $regex = '/^234[0-9]{10}/';
+        $token = $this->token;
         $request->validate([
             'number' => [
                 'required',
@@ -71,7 +81,7 @@ class VisitorController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer 211|CrkBdJxubacIpFKePn2geZlyotxKgUiP0zTKY0NB',
+            'Authorization' => 'Bearer '.$token,
         ])->post('https://www.airtimenigeria.com/api/v1/airtime/purchase',[
             'network_operator' => $network,
             'phone' => $number,

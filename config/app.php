@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'HBD Ariyo Ayomide'),
 
+    'token' => env('TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
