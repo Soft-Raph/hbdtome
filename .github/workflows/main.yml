@@ -48,6 +48,7 @@ jobs:
         run: |
           npm install
           npm run build
+          php artisan optimize:clear
           git reset --hard
           
       - name: 📂 Sync folders and files to the server
